@@ -898,6 +898,7 @@ struct ErtsPendingSuspend_ {
 #  define OLD_HTOP(p)       (p)->old_htop
 #  define OLD_HEAP(p)       (p)->old_heap
 #  define GEN_GCS(p)        (p)->gen_gcs
+#  define MAJ_GCS(p)        (p)->maj_gcs
 #  define MAX_GEN_GCS(p)    (p)->max_gen_gcs
 #  define FLAGS(p)          (p)->flags
 #  define MBUF(p)           (p)->mbuf
@@ -1020,6 +1021,7 @@ struct process {
     Eterm *old_htop;
     Eterm *old_heap;
     Uint16 gen_gcs;		/* Number of (minor) generational GCs. */
+    Uint16 maj_gcs;		/* Number of (minor) generational GCs. */
     Uint16 max_gen_gcs;		/* Max minor gen GCs before fullsweep. */
     ErlOffHeap off_heap;	/* Off-heap data updated by copy_struct(). */
     ErlHeapFragment* mbuf;	/* Pointer to heap fragment list */

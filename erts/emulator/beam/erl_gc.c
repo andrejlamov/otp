@@ -1481,6 +1481,7 @@ major_collection(Process* p, ErlHeapFragment *live_hf_end,
     HEAP_SIZE(p) = new_sz;
     HEAP_END(p) = n_heap + new_sz;
     GEN_GCS(p) = 0;
+    MAJ_GCS(p)++;
 
     HIGH_WATER(p) = HEAP_TOP(p);
 
